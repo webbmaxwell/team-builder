@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Form() {
 
@@ -9,17 +9,17 @@ function Form() {
   });
 
   const changeHandler = event => {
-    setList({ ...note, [event.target.name]: event.target.value })
+    setList({ ...list, [event.target.name]: event.target.value })
   }
 
   return (
-    <form>
+    <form className="form">
       <label htmlFor="">Name</label>
       <input
         type="text"
         name="name"
         placeholder="Enter Name"
-        value={note.name}
+        value={list.name}
         onChange={changeHandler}
       />
 
@@ -28,16 +28,16 @@ function Form() {
         type="text"
         name="email"
         placeholder="Enter Email"
-        value={note.email}
+        value={list.email}
         onChange={changeHandler}
       />
-      
+
       <label htmlFor="">Role</label>
       <input
         type="text"
         name="role"
         placeholder="Enter Role"
-        value={note.role}
+        value={list.role}
         onChange={changeHandler}
       />
       <button type="submit">Add to Team</button>
